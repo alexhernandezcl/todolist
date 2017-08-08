@@ -18,6 +18,7 @@ todo.renderList = function() {
         '<input type="checkbox" name="check_{{todoID}}" />' +
         ' <span>{{todoText}}</span></li>';
     $("#todoList").empty();
+    if(todo.list){
     for (var x = 0; x < todo.list.length; x++) {
         var elemento = todo.list[x];
         var newLI = tplLI;
@@ -45,6 +46,7 @@ todo.renderList = function() {
     });
 
     localStorage.setItem("todoList", JSON.stringify(todo.list));
+    }
 }
 todo.check = function(id) {
     //Marca una tarea como realizada
