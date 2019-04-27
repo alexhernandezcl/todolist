@@ -57,7 +57,7 @@ todo.uncheck = function(id) {
 
 
 todo.init = function() {
-    todo.list = JSON.parse(localStorage.getItem("todoList"));
+    todo.list = JSON.parse(localStorage.getItem("todoList")) || [];
     console.log(todo.list);
     todo.renderList();
     $("#btnAddTodo").on("click", function() {
